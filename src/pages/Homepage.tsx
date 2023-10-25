@@ -36,7 +36,7 @@ const StyledBanner = styled(Grid)({
 
 function Homepage() {
   const [userList, setUserList] = useState<UserList[]>([]);
-  const user = filteredUserData();
+  const [user, setUser] = useState<UserList>({ name: "", email: "" });
 
   const [open, setOpen] = useState<boolean>(false);
   const handleClose = () => setOpen(false);
@@ -44,7 +44,8 @@ function Homepage() {
   function generateUser() {
     getUserList().then((res) => {
       setOpen(true);
-      localStorage.setItem("userData", JSON.stringify(res));
+      //   localStorage.setItem("userData", JSON.stringify(res));
+      setUser(filteredUserData(res));
     });
   }
 
