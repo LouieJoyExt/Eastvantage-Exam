@@ -2,8 +2,8 @@ import { UserList } from "./types";
 import { UserListResponse } from "../api/types";
 
 export const filteredUserData = (): UserList => {
-  const storedData: string = localStorage.getItem("userData") ?? "";
-  const convertedUserData: UserListResponse = JSON.parse(storedData);
+  const storedData: string | null = localStorage.getItem("userData");
+  const convertedUserData: UserListResponse = JSON.parse(storedData ?? "{}");
 
   const filteredData = {
     name: "",
