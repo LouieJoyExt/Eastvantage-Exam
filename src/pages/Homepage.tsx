@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { UserList } from "./types";
-import { UserListResponse } from "../api/types";
 
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
