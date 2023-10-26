@@ -10,7 +10,7 @@ export const filteredUserData = (): UserList => {
     email: "",
   };
 
-  convertedUserData.results.map((item) => {
+  convertedUserData?.results.map((item) => {
     const name: string = `${item.name.title} ${item.name.first} ${item.name.last}`;
     const email: string = item.email;
 
