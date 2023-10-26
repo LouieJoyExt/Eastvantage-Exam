@@ -32,15 +32,15 @@ This Project is part of a technical assessment.
 
 Project Requirements:
 
-● Create a react application that displays the complete name and email address from
-the results of the api provided
-○ The fetch should be async and await then save it to local storage
-○ Destructure the response with appropriate keys needed.
-○ Use any fetching modules from npm instead of fetch
-● The application should also have a Refresh button to refresh the component (strictly
-not page load) to fetch another user with the same endpoint.
-● The application should utilize hooks and a functional component.
-● React application built in .tsx with typescript typings is a plus.
+- Create a react application that displays the complete name and email address from
+  the results of the api provided
+  1.  The fetch should be async and await then save it to local storage
+  2.  Destructure the response with appropriate keys needed.
+  3.  Use any fetching modules from npm instead of fetch
+- The application should also have a Refresh button to refresh the component (strictly
+  not page load) to fetch another user with the same endpoint.
+- The application should utilize hooks and a functional component.
+- React application built in .tsx with typescript typings is a plus.
 
 Project Overview:
 
