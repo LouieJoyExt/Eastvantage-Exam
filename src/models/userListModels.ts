@@ -27,6 +27,12 @@ interface UserNameTypes {
   title?: string;
 }
 
+interface UserPictureTypes {
+  large: string;
+  medium: string;
+  thumbnail: string;
+}
+
 export interface UserListResultTypes {
   cell?: string;
   dob?: UserListResultDobTypes;
@@ -35,4 +41,6 @@ export interface UserListResultTypes {
   id?: UserListResultIdTypes;
   location?: UserLocationTypes;
   name: UserNameTypes;
+  phone?: string;
+  picture?: UserPictureTypes;
 }

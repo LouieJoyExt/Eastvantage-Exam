@@ -1,7 +1,7 @@
 import { UserList } from "./types";
 import { UserListResponse } from "../api/types";
 
-export const filteredUserData = (): UserList => {
+export const getUserData = (): UserList => {
   const storedData: string =
     localStorage.getItem("userData") ?? '{"results": []}';
   const convertedUserData: UserListResponse = JSON.parse(storedData);
@@ -9,17 +9,20 @@ export const filteredUserData = (): UserList => {
   const filteredData = {
     name: "",
     email: "",
+    gender: "",
+    cell: "",
+    phone: "",
+    image: "",
   };
 
-  console.log(convertedUserData);
-
   convertedUserData.results.map((item) => {
-    const name: string = `${item.name.title} ${item.name.first} ${item.name.last}`;
-    const email: string = item.email;
-
     const userData = {
-      name: name,
-      email: email,
+      name: `${item.name.title} ${item.name.first} ${item.name.last}`,
+      email: item.email,
+      gender: item.gender,
+      cell: item.cell,
+      phone: item.phone,
+      image: item.picture?.large,
     };
 
     Object.assign(filteredData, userData);
