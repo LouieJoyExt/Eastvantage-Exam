@@ -20,7 +20,7 @@ export const filteredUserData = (): UserList => {
     };
 
     Object.assign(filteredData, userData);
-  });
+  }) ?? [];
 
   return filteredData;
 };
