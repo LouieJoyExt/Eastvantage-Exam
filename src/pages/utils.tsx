@@ -3,14 +3,16 @@ import { UserListResponse } from "../api/types";
 
 export const filteredUserData = (): UserList => {
   const storedData: string = localStorage.getItem("userData") ?? "{}";
-  const convertedUserData: UserListResponse = JSON.parse(storedData) ?? [];
+  const convertedUserData: UserListResponse = JSON.parse(storedData) ?? {
+    results: [],
+  };
 
   const filteredData = {
     name: "",
     email: "",
   };
 
-  convertedUserData.results.map((item) => {
+  convertedUserData?.results.map((item) => {
     const name: string = `${item.name.title} ${item.name.first} ${item.name.last}`;
     const email: string = item.email;
 
@@ -20,7 +22,7 @@ export const filteredUserData = (): UserList => {
     };
 
     Object.assign(filteredData, userData);
-  }) ?? [];
+  });
 
   return filteredData;
 };
