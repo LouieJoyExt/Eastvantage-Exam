@@ -3,9 +3,7 @@ import { UserListResponse } from "../api/types";
 
 export const filteredUserData = (): UserList => {
   const storedData: string = localStorage.getItem("userData") ?? "{}";
-  const convertedUserData: UserListResponse = JSON.parse(storedData) ?? {
-    results: [{ name: {} }],
-  };
+  const convertedUserData: UserListResponse = JSON.parse(storedData ?? "{}");
 
   const filteredData = {
     name: "",
